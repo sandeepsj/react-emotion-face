@@ -87,6 +87,13 @@ export interface EmotionConfig {
 
 export type CharacterType = 'face' | 'dog' | 'cat';
 
+export const CHARACTERS: CharacterType[] = ['face', 'dog', 'cat'];
+
+/** Returns all available character types. */
+export function getCharacters(): CharacterType[] {
+  return CHARACTERS;
+}
+
 export interface EmotionFaceProps {
   emotion: Emotion;
   message?: string;
