@@ -166,4 +166,12 @@ export const emotionConfigs: Record<Emotion, EmotionConfig> = {
     accessories: { sweatDrop: true },
     skinColor: '#FFDAB9',
   },
+  laughing: {
+    eyeShape: 'closed',
+    eyebrowShape: 'lifted',
+    mouthShape: 'laugh',
+    idleAnimation: { type: 'bounce', duration: 0.6 },
+    accessories: { blush: true },
+    skinColor: '#FFD700',
+  },
 };

@@ -67,7 +67,21 @@ function ZigzagMouth() {
   );
 }
 
-const STRUCTURAL: Set<MouthShape> = new Set(['surprised-o', 'excited-open', 'silly', 'zigzag']);
+function LaughMouth() {
+  return (
+    <g>
+      {/* Wide open laugh — filled interior + teeth */}
+      <path d="M 80 112 Q 100 138 120 112" stroke="#333" strokeWidth={3.5} fill="#cc4444" strokeLinecap="round" />
+      <line x1="80" y1="112" x2="120" y2="112" stroke="#333" strokeWidth={3} />
+      {/* Teeth row */}
+      <rect x={83} y={108} width={9} height={7} rx={2} fill="white" stroke="#ccc" strokeWidth={0.5} />
+      <rect x={94} y={107} width={12} height={8} rx={2} fill="white" stroke="#ccc" strokeWidth={0.5} />
+      <rect x={108} y={108} width={9} height={7} rx={2} fill="white" stroke="#ccc" strokeWidth={0.5} />
+    </g>
+  );
+}
+
+const STRUCTURAL: Set<MouthShape> = new Set(['surprised-o', 'excited-open', 'silly', 'zigzag', 'laugh']);
 
 export function Mouth({ shape }: MouthProps) {
   if (STRUCTURAL.has(shape)) {
@@ -85,6 +99,7 @@ export function Mouth({ shape }: MouthProps) {
           {shape === 'excited-open' && <ExcitedOpen />}
           {shape === 'silly' && <SillyMouth />}
           {shape === 'zigzag' && <ZigzagMouth />}
+          {shape === 'laugh' && <LaughMouth />}
         </motion.g>
       </AnimatePresence>
     );

@@ -23,6 +23,7 @@ const EMOTION_COLORS: Record<Emotion, string> = {
   determined: '#FF8C00',
   shy: '#FFB6C1',
   anxious: '#FFDAB9',
+  laughing: '#FFD700',
 };
 
 export default function App() {

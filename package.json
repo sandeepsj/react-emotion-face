@@ -1,6 +1,6 @@
 {
   "name": "react-emotion-face",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Animated cartoon emotion face React component library",
   "main": "dist/react-emotion-face.umd.cjs",
   "module": "dist/react-emotion-face.es.js",
@@ -13,7 +13,9 @@
     },
     "./styles": "./dist/style.css"
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "dev": "vite serve demo --config demo/vite.config.ts",
     "build:lib": "vite build",
@@ -38,6 +40,13 @@
     "vite": "^6.0.0",
     "vite-plugin-dts": "^4.0.0"
   },
-  "keywords": ["react", "emotion", "animation", "svg", "cartoon", "face"],
+  "keywords": [
+    "react",
+    "emotion",
+    "animation",
+    "svg",
+    "cartoon",
+    "face"
+  ],
   "license": "MIT"
 }

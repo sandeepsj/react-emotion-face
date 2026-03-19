@@ -18,13 +18,19 @@ export type Emotion =
   | 'silly'
   | 'determined'
   | 'shy'
-  | 'anxious';
+  | 'anxious'
+  | 'laughing';
 
 export const EMOTIONS: Emotion[] = [
   'happy', 'sad', 'angry', 'mad', 'surprised', 'calm', 'sleepy', 'excited',
   'tired', 'confused', 'embarrassed', 'nervous', 'proud', 'disgusted',
-  'bored', 'love', 'silly', 'determined', 'shy', 'anxious',
+  'bored', 'love', 'silly', 'determined', 'shy', 'anxious', 'laughing',
 ];
+
+/** Returns all available emotion strings. */
+export function getEmotions(): Emotion[] {
+  return EMOTIONS;
+}
 
 export type EyeShape = 'normal' | 'sleepy' | 'surprised' | 'sad' | 'heart' | 'closed' | 'squint' | 'wide';
 export type EyebrowShape = 'normal' | 'raised' | 'furrowed' | 'sad' | 'lifted' | 'flat' | 'asymmetric';
@@ -38,7 +44,8 @@ export type MouthShape =
   | 'silly'
   | 'smirk'
   | 'tight'
-  | 'zigzag';
+  | 'zigzag'
+  | 'laugh';
 
 export type IdleAnimationType =
   | 'breathe'
