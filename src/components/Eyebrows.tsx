@@ -14,58 +14,58 @@ export function Eyebrows({ shape }: EyebrowsProps) {
     case 'normal':
       return (
         <g>
-          <path d="M 60 62 Q 72 58 84 62" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
-          <path d="M 116 62 Q 128 58 140 62" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
+          <path d="M 54 74 Q 66 70 78 74" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
+          <path d="M 122 74 Q 134 70 146 74" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
         </g>
       );
     case 'raised':
       return (
         <g>
-          <path d="M 60 56 Q 72 52 84 56" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
-          <path d="M 116 56 Q 128 52 140 56" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
+          <path d="M 54 68 Q 66 64 78 68" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
+          <path d="M 122 68 Q 134 64 146 68" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
         </g>
       );
     case 'furrowed':
       return (
         <g>
-          <path d="M 60 62 Q 72 66 84 58" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
-          <path d="M 116 58 Q 128 66 140 62" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
+          <path d="M 54 74 Q 66 78 78 70" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
+          <path d="M 122 70 Q 134 78 146 74" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
         </g>
       );
     case 'sad':
       return (
         <g>
-          <path d="M 60 60 Q 72 64 84 60" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
-          <path d="M 116 60 Q 128 64 140 60" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
+          <path d="M 54 72 Q 66 76 78 72" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
+          <path d="M 122 72 Q 134 76 146 72" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
         </g>
       );
     case 'lifted':
       return (
         <g>
-          <path d="M 60 60 Q 72 54 84 58" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
-          <path d="M 116 58 Q 128 54 140 60" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
+          <path d="M 54 72 Q 66 66 78 70" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
+          <path d="M 122 70 Q 134 66 146 72" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
         </g>
       );
     case 'flat':
       return (
         <g>
-          <line x1="60" y1="62" x2="84" y2="62" stroke={stroke} strokeWidth={sw} strokeLinecap={lc} />
-          <line x1="116" y1="62" x2="140" y2="62" stroke={stroke} strokeWidth={sw} strokeLinecap={lc} />
+          <line x1="54" y1="74" x2="78" y2="74" stroke={stroke} strokeWidth={sw} strokeLinecap={lc} />
+          <line x1="122" y1="74" x2="146" y2="74" stroke={stroke} strokeWidth={sw} strokeLinecap={lc} />
         </g>
       );
     case 'asymmetric':
       // Left brow raised (confused), right brow furrowed
       return (
         <g>
-          <path d="M 60 56 Q 72 52 84 58" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
-          <path d="M 116 58 Q 128 66 140 60" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
+          <path d="M 54 68 Q 66 64 78 70" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
+          <path d="M 122 70 Q 134 78 146 72" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
         </g>
       );
     default:
       return (
         <g>
-          <path d="M 60 62 Q 72 58 84 62" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
-          <path d="M 116 62 Q 128 58 140 62" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
+          <path d="M 54 74 Q 66 70 78 74" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
+          <path d="M 122 74 Q 134 70 146 74" stroke={stroke} strokeWidth={sw} fill="none" strokeLinecap={lc} />
         </g>
       );
   }

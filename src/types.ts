@@ -83,7 +83,6 @@ export interface EmotionFaceProps {
   message?: string;
   size?: number;
   animated?: boolean;
-  showBody?: boolean;
   color?: string;
   onEmotionChange?: (emotion: Emotion) => void;
 }

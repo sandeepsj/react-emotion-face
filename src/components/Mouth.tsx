@@ -8,12 +8,12 @@ interface MouthProps {
 
 // Morphable paths — all use same SVG command count: M x y Q cx cy ex ey
 const MORPHABLE: Partial<Record<MouthShape, string>> = {
-  smile:  'M 72 118 Q 100 140 128 118',
-  frown:  'M 72 130 Q 100 112 128 130',
-  angry:  'M 72 124 Q 100 116 128 124',
-  flat:   'M 78 122 Q 100 122 122 122',
-  tight:  'M 78 122 Q 100 126 122 122',
-  smirk:  'M 78 122 Q 100 132 120 118',
+  smile:  'M 85 115 Q 100 130 115 115',
+  frown:  'M 85 125 Q 100 110 115 125',
+  angry:  'M 85 120 Q 100 112 115 120',
+  flat:   'M 90 118 Q 100 118 110 118',
+  tight:  'M 90 118 Q 100 122 110 118',
+  smirk:  'M 90 118 Q 100 125 110 110',
 };
 
 function MorphableMouth({ shape }: { shape: MouthShape }) {
@@ -32,14 +32,14 @@ function MorphableMouth({ shape }: { shape: MouthShape }) {
 }
 
 function SurprisedO() {
-  return <ellipse cx={100} cy={122} rx={14} ry={16} fill="#333" />;
+  return <ellipse cx={100} cy={118} rx={8} ry={10} fill="#333" />;
 }
 
 function ExcitedOpen() {
   return (
     <g>
-      <path d="M 68 114 Q 100 144 132 114" stroke="#333" strokeWidth={3.5} fill="#cc4444" strokeLinecap="round" />
-      <path d="M 68 114 Q 100 144 132 114 Z" fill="#cc4444" />
+      <path d="M 82 114 Q 100 134 118 114" stroke="#333" strokeWidth={3.5} fill="#cc4444" strokeLinecap="round" />
+      <path d="M 82 114 Q 100 134 118 114 Z" fill="#cc4444" />
     </g>
   );
 }
@@ -47,9 +47,9 @@ function ExcitedOpen() {
 function SillyMouth() {
   return (
     <g>
-      <path d="M 72 116 Q 100 138 128 116" stroke="#333" strokeWidth={3.5} fill="none" strokeLinecap="round" />
+      <path d="M 85 116 Q 100 128 115 116" stroke="#333" strokeWidth={3.5} fill="none" strokeLinecap="round" />
       {/* Tongue */}
-      <ellipse cx={100} cy={134} rx={10} ry={8} fill="#FF69B4" stroke="#333" strokeWidth={2} />
+      <ellipse cx={100} cy={125} rx={8} ry={6} fill="#FF69B4" stroke="#333" strokeWidth={2} />
     </g>
   );
 }
@@ -57,7 +57,7 @@ function SillyMouth() {
 function ZigzagMouth() {
   return (
     <polyline
-      points="72,128 84,118 96,128 108,118 120,128 128,122"
+      points="85,122 90,116 95,122 100,116 105,122 110,116 115,120"
       stroke="#333"
       strokeWidth={3.5}
       fill="none"

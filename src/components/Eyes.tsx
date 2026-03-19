@@ -28,8 +28,8 @@ function SleepyEye({ cx, cy }: { cx: number; cy: number }) {
 function SurprisedEye({ cx, cy, animated }: { cx: number; cy: number; animated: boolean }) {
   return (
     <g className={animated ? 'ef-eye-blink' : ''} style={{ transformOrigin: `${cx}px ${cy}px` }}>
-      <circle cx={cx} cy={cy} r={13} fill="#333" />
-      <circle cx={cx + 4} cy={cy - 4} r={3.5} fill="white" />
+      <ellipse cx={cx} cy={cy} rx={10} ry={13} fill="#333" />
+      <circle cx={cx + 3} cy={cy - 4} r={3} fill="white" />
     </g>
   );
 }
@@ -90,8 +90,8 @@ function WideEye({ cx, cy, animated }: { cx: number; cy: number; animated: boole
 
 export function Eyes({ shape, animated }: EyesProps) {
   const positions = [
-    { cx: 72, cy: 82 },
-    { cx: 128, cy: 82 },
+    { cx: 62, cy: 95 },
+    { cx: 138, cy: 95 },
   ];
 
   return (

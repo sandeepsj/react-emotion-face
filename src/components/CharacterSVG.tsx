@@ -4,14 +4,12 @@ import type { EmotionConfig } from '../types';
 import { Eyes } from './Eyes';
 import { Eyebrows } from './Eyebrows';
 import { Mouth } from './Mouth';
-import { Body } from './Body';
 import { Accessories } from './Accessories';
 
 interface CharacterSVGProps {
   config: EmotionConfig;
   color: string;
   animated: boolean;
-  showBody: boolean;
   size: number;
 }
 
@@ -30,10 +28,10 @@ function getAnimationClass(config: EmotionConfig, animated: boolean): string {
   }
 }
 
-export function CharacterSVG({ config, color, animated, showBody, size }: CharacterSVGProps) {
+export function CharacterSVG({ config, color, animated, size }: CharacterSVGProps) {
   const animClass = getAnimationClass(config, animated);
-  const viewBox = showBody ? '0 0 200 280' : '0 20 200 160';
-  const svgHeight = showBody ? size : size * 0.8;
+  const viewBox = '0 20 200 160';
+  const svgHeight = size;
 
   return (
     <svg
@@ -70,23 +68,25 @@ export function CharacterSVG({ config, color, animated, showBody, size }: Charac
         }
       >
         {/* Head */}
-        <circle
-          cx={100}
-          cy={90}
-          r={70}
+        <rect
+          x={25}
+          y={25}
+          width={150}
+          height={140}
+          rx={45}
           fill={color}
           stroke="#333"
           strokeWidth={3}
         />
 
+        {/* Cute Cheeks */}
+        <ellipse cx={56} cy={105} rx={12} ry={8} fill="#ff8c8c" opacity={0.6} />
+        <ellipse cx={144} cy={105} rx={12} ry={8} fill="#ff8c8c" opacity={0.6} />
+
         <Accessories config={config.accessories} animated={animated} />
         <Eyebrows shape={config.eyebrowShape} />
         <Eyes shape={config.eyeShape} animated={animated} />
         <Mouth shape={config.mouthShape} />
-
-        {showBody && (
-          <Body color={color} tilt={config.bodyTilt || 0} />
-        )}
       </motion.g>
     </svg>
   );
