@@ -17,7 +17,7 @@
   "scripts": {
     "dev": "vite serve demo --config demo/vite.config.ts",
     "build:lib": "vite build",
-    "build:demo": "vite build --config demo/vite.config.ts",
+    "build:demo": "vite build --config demo/vite.config.ts && touch docs/.nojekyll",
     "build": "npm run build:lib && npm run build:demo",
     "preview": "vite preview --config demo/vite.config.ts"
   },
