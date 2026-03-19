@@ -4,6 +4,7 @@ import type { MouthShape } from '../types';
 
 interface MouthProps {
   shape: MouthShape;
+  groupTransform?: string;
 }
 
 // Morphable paths — all use same SVG command count: M x y Q cx cy ex ey
@@ -83,27 +84,33 @@ function LaughMouth() {
 
 const STRUCTURAL: Set<MouthShape> = new Set(['surprised-o', 'excited-open', 'silly', 'zigzag', 'laugh']);
 
-export function Mouth({ shape }: MouthProps) {
+export function Mouth({ shape, groupTransform }: MouthProps) {
   if (STRUCTURAL.has(shape)) {
     return (
-      <AnimatePresence mode="wait">
-        <motion.g
-          key={shape}
-          initial={{ opacity: 0, scale: 0.8 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0, scale: 0.8 }}
-          transition={{ duration: 0.2 }}
-          style={{ transformOrigin: '100px 122px' }}
-        >
-          {shape === 'surprised-o' && <SurprisedO />}
-          {shape === 'excited-open' && <ExcitedOpen />}
-          {shape === 'silly' && <SillyMouth />}
-          {shape === 'zigzag' && <ZigzagMouth />}
-          {shape === 'laugh' && <LaughMouth />}
-        </motion.g>
-      </AnimatePresence>
+      <g transform={groupTransform}>
+        <AnimatePresence mode="wait">
+          <motion.g
+            key={shape}
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.8 }}
+            transition={{ duration: 0.2 }}
+            style={{ transformOrigin: '100px 122px' }}
+          >
+            {shape === 'surprised-o' && <SurprisedO />}
+            {shape === 'excited-open' && <ExcitedOpen />}
+            {shape === 'silly' && <SillyMouth />}
+            {shape === 'zigzag' && <ZigzagMouth />}
+            {shape === 'laugh' && <LaughMouth />}
+          </motion.g>
+        </AnimatePresence>
+      </g>
     );
   }
 
-  return <MorphableMouth shape={shape} />;
+  return (
+    <g transform={groupTransform}>
+      <MorphableMouth shape={shape} />
+    </g>
+  );
 }

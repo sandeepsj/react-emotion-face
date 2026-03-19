@@ -2,16 +2,19 @@ import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import type { AccessoryConfig } from '../types';
 
+interface BlushPos { cx: number; cy: number; }
+
 interface AccessoriesProps {
   config: AccessoryConfig;
   animated: boolean;
+  blushPositions?: [BlushPos, BlushPos];
 }
 
-function Blush() {
+function Blush({ positions }: { positions: [BlushPos, BlushPos] }) {
   return (
     <g>
-      <ellipse cx={62} cy={100} rx={14} ry={8} fill="#FF9999" opacity={0.6} />
-      <ellipse cx={138} cy={100} rx={14} ry={8} fill="#FF9999" opacity={0.6} />
+      <ellipse cx={positions[0].cx} cy={positions[0].cy} rx={14} ry={8} fill="#FF9999" opacity={0.6} />
+      <ellipse cx={positions[1].cx} cy={positions[1].cy} rx={14} ry={8} fill="#FF9999" opacity={0.6} />
     </g>
   );
 }
@@ -144,7 +147,9 @@ function QuestionMark() {
   );
 }
 
-export function Accessories({ config, animated }: AccessoriesProps) {
+const DEFAULT_BLUSH: [BlushPos, BlushPos] = [{ cx: 62, cy: 100 }, { cx: 138, cy: 100 }];
+
+export function Accessories({ config, animated, blushPositions }: AccessoriesProps) {
   const {
     blush, tears, zFloating, heartsFloating,
     sweatDrop, sparkles, angerLines, questionMark,
@@ -154,7 +159,7 @@ export function Accessories({ config, animated }: AccessoriesProps) {
     <AnimatePresence>
       {blush && (
         <motion.g key="blush" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}>
-          <Blush />
+          <Blush positions={blushPositions ?? DEFAULT_BLUSH} />
         </motion.g>
       )}
       {tears && (

@@ -85,11 +85,14 @@ export interface EmotionConfig {
   skinColor?: string;
 }
 
+export type CharacterType = 'face' | 'dog' | 'cat';
+
 export interface EmotionFaceProps {
   emotion: Emotion;
   message?: string;
   size?: number;
   animated?: boolean;
   color?: string;
+  character?: CharacterType;
   onEmotionChange?: (emotion: Emotion) => void;
 }

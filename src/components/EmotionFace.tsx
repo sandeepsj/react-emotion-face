@@ -12,6 +12,7 @@ export function EmotionFace({
   size = 200,
   animated = true,
   color,
+  character = 'face',
   onEmotionChange,
 }: EmotionFaceProps) {
   const config = emotionConfigs[emotion];
@@ -34,6 +35,7 @@ export function EmotionFace({
         color={skinColor}
         animated={animated}
         size={size}
+        character={character}
       />
       <AnimatePresence>
         {message && (

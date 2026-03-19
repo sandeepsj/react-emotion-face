@@ -2,9 +2,12 @@ import React from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
 import type { EyeShape } from '../types';
 
+interface EyePosition { cx: number; cy: number; }
+
 interface EyesProps {
   shape: EyeShape;
   animated: boolean;
+  positions?: [EyePosition, EyePosition];
 }
 
 function NormalEye({ cx, cy, animated }: { cx: number; cy: number; animated: boolean }) {
@@ -88,8 +91,8 @@ function WideEye({ cx, cy, animated }: { cx: number; cy: number; animated: boole
   );
 }
 
-export function Eyes({ shape, animated }: EyesProps) {
-  const positions = [
+export function Eyes({ shape, animated, positions }: EyesProps) {
+  const positions_ = positions ?? [
     { cx: 62, cy: 95 },
     { cx: 138, cy: 95 },
   ];
@@ -103,7 +106,7 @@ export function Eyes({ shape, animated }: EyesProps) {
         exit={{ opacity: 0 }}
         transition={{ duration: 0.2 }}
       >
-        {positions.map(({ cx, cy }, i) => {
+        {positions_.map(({ cx, cy }, i) => {
           switch (shape) {
             case 'sleepy':
               return <SleepyEye key={i} cx={cx} cy={cy} />;
