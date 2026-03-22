@@ -1,6 +1,6 @@
 {
   "name": "react-emotion-face",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Animated cartoon emotion face React component library",
   "main": "dist/react-emotion-face.umd.cjs",
   "module": "dist/react-emotion-face.es.js",
@@ -51,7 +51,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/sandeepsj/react-emotion-face.git"
+    "url": "git+https://github.com/sandeepsj/react-emotion-face.git"
   },
   "homepage": "https://github.com/sandeepsj/react-emotion-face#readme",
   "bugs": {
