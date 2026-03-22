@@ -48,5 +48,13 @@
     "cartoon",
     "face"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sandeepsj/react-emotion-face.git"
+  },
+  "homepage": "https://github.com/sandeepsj/react-emotion-face#readme",
+  "bugs": {
+    "url": "https://github.com/sandeepsj/react-emotion-face/issues"
+  }
 }
